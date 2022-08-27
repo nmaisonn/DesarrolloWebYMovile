@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/js/all.min.js"></script>
+    <title>Ejercicio1</title>
+</head>
+<body>
+    <h1>Ejercicio 1. Clase 2</h1>
+    <br>
+    <h2>Lista 1</h2>
+    <ul id="lista1">
+        <li class = "impar"> Elemento 1</li>
+        <li class = "par">Elemento 2</li>
+        <li class = "impar">Elemento 3</li>
+        <li class = "par">Elemento 4</li>
+    </ul>
+    <br> 
+    <h2>Lista 2</h2>
+    <ol id="lista2">
+        <li class = "impar">Elemento 5</li>
+        <li class = "par">Elemento 6</li>
+        <li class = "impar">Elemento 7</li>
+        <li class = "par">Elemento 8</li>
+    </ol>
+    <br>    
+    <button class="botones" onclick="clickBtnAgregar()">AgregarElemento</button>
+    <input type="text" placeholder="Nuevo elemento" id="tElementoInputAgregar">
+    <input type="number" placeholder="Numero de la lista" id = "tListaInputAgregar">
+    <br>
+    <br>
+    <hr>
+    <br>
+    <button class = "botones" onclick="clickBtnEliminar()">EliminarElemento</button>
+    <input type="text" placeholder= "Elemento a eliminar" id = "tElementoInputEliminar">
+    <input type="number" placeholder="Numero de la lista" id = "tListaInputElminar">
+    <script src ="script.js"></script>
+</body>
+</html>

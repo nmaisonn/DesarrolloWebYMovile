@@ -1,0 +1,18 @@
+#titulo{
+    background-color: blue;
+}
+.lista{
+    color: brown;
+    font-size: xx-small;
+}
+ol{
+    background-color: red;
+}
+ol .impar{
+    background-color: darkgreen;
+}
+.boton
+{
+    background-color: gold;
+    font-size: large;
+}

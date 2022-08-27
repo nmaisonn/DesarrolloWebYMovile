@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="shortcut icon" href="/archivos/logoPestaña.png">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Ejercicio1708SegundoIntento</title>
+</head>
+<body>
+    <!--NAVBAR-->
+    <nav class="navbar navbar-expand-sm bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="https://ucu.edu.uy/es" target="_blank">
+                <img src="archivos/logoUCU.jpeg" alt="IconoUcu" id="icono-pag">
+            </a>            
+            <a class="navbar-brand" href="#" id="titulo-pag">StickyNotes</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" 
+            data-target="#navbarSupportedContent" 
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="navbar-item">
+                        <a class="nav-link" href="#">Opcion1</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="nav-link" href="#">Opcion2</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="nav-link" href="#">Opcion3</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="nav-link" href="#">Opcion4</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--CARTAS-->
+    <div id="notas">
+        <div class="container-md">
+            <div class="row">
+                <h3 class="text-center h1">Notas</h3>
+            </div>
+            <div id="contenido-notas" class="row pt-3">
+                <div class="col-sm-12 col-md-4">
+                    <div class="card w-100 card-border mb-5">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <button class="btn btn-sm fr"><i class="fa-regular fa-trash-can"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="card w-100 card-border mb-5" data-bs-toggle="modal" data-bs-target="#staticBackdropEditar">
+                        <div class="card-body">
+                            <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <button class="btn btn-sm fr"><i class="fa-regular fa-trash-can"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="card w-100 card-border mb-5">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <button class="btn btn-sm fr"><i class="fa-regular fa-trash-can"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+            <!--BOTONAGREGAR-->
+            <div class="row fr">
+                <button class="botonAgregar" data-bs-toggle="modal" data-bs-target="#staticBackdropAgregar">
+                    Agregar
+                </button> 
+            <!-- ModalAgregar -->
+            <div class="modal fade" id="staticBackdropAgregar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelAgregar" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content fm">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabelAgregar">Agregar Nota</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <textarea cols="30" rows="5" placeholder="Ingrese Texto" id="txt-areaAgregar"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn-modal btn-primary" onclick="btnAgregar()">Guardar</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            
+            <!-- ModalEditar -->
+            <div class="modal fade" id="staticBackdropEditar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelEditar" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content fm">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabelEditar">Editar Nota</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <textarea cols="30" rows="5" placeholder="Ingrese Texto" id="txt-areaEditar" onload="cargarTexto(this)"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn-modal btn-primary" onclick="btnEditar()">Guardar</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            
+            <!-- Modal-->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content fm">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Agregar Nota</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <textarea cols="30" rows="5" placeholder="Ingrese Texto" id="txt-area"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn-modal btn-primary" onclick="btnAgregar()">Guardar</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>     
+
+    <!--FOOTER-->
+    <div id="footer" class="fixed-bottom bg-light">
+        <!--DARKMODE-->
+        <div id="darkmode" >
+            <div class="container">
+                <div class="form-check form-switch pb-5">
+                    <input class="form-check-input checkbox-darkmode" type="checkbox" id="flexSwitchCheckDefault">
+                </div>
+            </div>
+        </div>
+        <div class="container linea w-100 pt-5">
+            <div class="row justify-content-md-end">
+                <div class="col text-end">
+                    <p>© Copyright 2022. Nicolas Maisonnave</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--SCRIPTS-->
+    <script src="https://kit.fontawesome.com/5a25b9ed28.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+</body>
+</html>

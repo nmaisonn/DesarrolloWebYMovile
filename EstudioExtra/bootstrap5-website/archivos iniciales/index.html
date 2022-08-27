@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PagPrueba</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--NAVBAR-->
+    <!--Quiero que la barra se expanda cuando son sm(576px).
+        Tema oscuro y fondo rojo-->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-danger">
+        <!--Quiero que mi barra ocupe todo el ancho de la pantalla-->
+        <div class="container-fluid">
+            <!--navbar-brand marca que es un logo-->        
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.jpg" alt="">
+            </a>
+            <!--El boton se usa para que sea un menu hamburger
+            El atributo data target nos permite decir que cosas va a tener dentro. En este caso tendra el div con la lista-->                                
+            <button class="navbar-toggler" type="button" data-toggle="collapse" 
+            data-target="#navbarSupportedContent" 
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!--Este div sirve para contener todos las opciones del menu.
+                Se le coloca un id que tiene que ser el mismo que pusimos en data-target en el boton-->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!--Se crea una lista con todos los elementos que tiene dentro
+                ml-auto = margin left auto. Lo que sigifica que me va a poner todo a la derecha-->
+                <ul class="navbar-nav  ml-auto">
+                    <li class="navbar-item">
+                        <!--Si pusiera algo en el href como una pag o algo me llevaria para ahi-->
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="nav-link" href="#">Summer Pack</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="nav-link" href="#">Register</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="nav-link" href="#">Sign in</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--CAROUSEL-->
+    <div class="carousel slide" id="mainSlaider"  data-ride="carousel">
+        <div class="carousel-inner">
+            <!--Se pone cual es el primer item del carousel-->
+            <div class="carousel-item active">
+                <!--Se pone w-100 para indicar que la imagen ocupe el 100% del carousel--> 
+                <img src="img/slide01.jpg" class="d-block w-100" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="img/slide02.jpg" class="d-block w-100" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="img/slide03.jpg" class="d-block w-100" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!--RIBBON CUADRADITO CON IMAGEN, TEXTO Y FONDO TEXTURIZADO-->
+    <div id="ribbon" class="container-fluid">
+        <!--Esto sirve para decir que el div ocupe un 50% del largo total.
+        Que tenga un padding de 5 para la derecha y 5 para la izquierda. Es lo mismo si pongo px-5.-->
+        <div id="birthday" class="container w-50 pl-5 pr-5 rounded-lg">
+            <!--Se pone que la row tenga todos los items centrados al medio.
+                Si pusiera align-items-start irian al comienzo y end al final.-->
+            <div class="row align-items-center">
+                <!--Se pone que la col partida en 5 y en 7. Ademas se deja un padding de 3.-->
+                <div class="col-5 p-3">
+                    <img src="img/image01.png" class="w-75 mx-auto" alt="">
+                </div>
+                <!--Se pone que la col partida en 5 y en 7. Ademas se deja un padding de 3.
+                Y se pone el texto en clarito y alineado al centro de la columna-->
+                <div class="col-7 p-3 text-light text-center">
+                    <p class="text-warning h3">Hoy es </p>
+                    <h4 class="h2 text-shadow">El cumple de tu vieja</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--SEPARADOR AMARILLO-->
+    <div id="separator-ribbon">
+        <!--Se pone bg-waring para que ponga fondo en amarillo-->
+        <div class="content bg-warning"></div>
+    </div>
+
+    <!--CARTAS-->
+    <div id="games">
+        <div class="container-md p-5">
+            <div class="row pt-5">
+                <h3 class="text-center pb-5 pt-5 h1">Animales del juego</h3>
+            </div>
+            <div class="row pt-3">
+                <div class="col-4">
+                    <div class="card w-100 card-border mb-5">
+                        <img src="img/card01.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card w-100 card-border mb-5">
+                        <img src="img/card02.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card w-100 card-border mb-5">
+                        <img src="img/card03.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--PASTO VERDE SEPARADOR-->
+    <div id="separator-amiibos">
+        <div class="content bg-success"></div>
+    </div>
+      
+    <div id="amiibos" class="px-5 pb-5 bg-success">
+        <div class="container">
+            <div class="row">
+                <h2 class="text-center text-white text-shadow h1">Featured Amiibo™ figures</h2>
+            </div>
+            <!--Sirve para marcar cuantas columnas quiero que haya dependiendo del tamaño 
+            de la pantalla-->
+            <div class="row row-cols-1 row-cols-2 row-cols-sm-2 row-cols-md-4">
+                <div class="col-sm">
+                    <img src="img/figure01.png" alt="" class="w-100 amiibo">
+                    <div class="text-center"><span class="amiibo-name h5 p-2">Isabelle</span></div>
+                </div>
+                <div class="col-sm">
+                    <img src="img/figure02.png" alt="" class="w-100 amiibo">
+                    <div class="text-center"><span class="amiibo-name h5 p-2">Kapp'n</span></div>
+                </div>
+                <div class="col-sm">
+                    <img src="img/figure03.png" alt="" class="w-100 amiibo">
+                    <div class="text-center"><span class="amiibo-name h5 p-2">Rover</span></div>
+                </div>
+                <div class="col-sm">
+                    <img src="img/figure04.png" alt="" class="w-100 amiibo">
+                    <div class="text-center"><span class="amiibo-name h5 p-2">Timmy & Tommy</span></div>
+                </div>
+            </div>
+            <div class="row py-5">
+                <div class="col text-center">
+                    <a href="#" class="link-dark">
+                        <button class="btn btn-warning btn-lg rounded-pill p-3 font-weight-bold">View Amiibo catalog</button>
+                    </a>
+                </div>  
+            </div>
+        </div>
+        <div id="separator-amiibos-footer"></div>
+    </div>
+
+      <!--FOOTER-->
+      <div id="footer" class="p-5">
+            <div class="container w-50 pt-5">
+                <div class="row row-cols-md-2 justify-content-md-center">
+                    <div class="col text-center">
+                        <a href="#">
+                            <button class="btn btn-lg rounded-pill btn-warning w-100  p-3 shadow-sm font-weight-bold">Customer Support</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="row justify-content-md-center py-5">
+                    <div class="col text-center font-weight-light">
+                        <p>For Nintendo 3DS systems, use Parental Controls to restrict 3D mode for children 6 and under.</p>
+                        <p>Internet access required for online features. For more info, go to support.nintendo.com.</p>
+                        <p>Games and amiibo accessories sold separately. Figures shown not actual size. Compatibility and functionality of amiibo may vary per game. Visit amiibo.com for specific details on how each amiibo works.</p>
+                        <p>© 2001 - 2020 Nintendo. Nintendo properties are trademarks of Nintendo.</p>
+                    </div>
+                </div>
+                <div class="row"></div>
+            </div>
+        </div>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/popper.min.js"></script>
+</body>
+</html>

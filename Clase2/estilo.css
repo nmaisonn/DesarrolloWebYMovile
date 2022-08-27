@@ -1,0 +1,32 @@
+#lista1
+{
+    font-size: large;
+}
+
+#lista2
+{
+    font-size: small;
+}
+
+ul
+{
+    list-style-type: upper-roman;
+}
+
+.impar
+{
+    background-color: blue;
+}
+
+.par
+{
+    background-color: red;
+}
+
+.botones
+{
+    background-color: black;
+    color: white;
+    font-style: italic;
+    border-color: white;
+}

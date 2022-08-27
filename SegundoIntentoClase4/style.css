@@ -1,0 +1,85 @@
+#titulo-pag{
+    color:orange
+}
+
+#icono-pag{
+    width: 40px;
+    height: 30px;
+}
+
+/*
+Border de la carta
+*/
+.card-border{
+    border: solid 2px black;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all ease-out 0.2s;
+}
+/*
+Hover expansivo para las cartas.
+*/
+.card-border:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.btn:hover{
+    transform: scale(1.05);
+}
+
+#footer .linea{
+    border-top: solid 1px black;
+}
+
+.checkbox-darkmode{
+    width: 30px;
+    height: 20px;
+}
+
+.botonAgregar{
+    position: fixed;
+    border-radius: 10px;
+    border: solid 2px black;
+}
+
+.botonAgregar:hover{
+    transform: scale(1.05);
+}
+
+.modal-content .btn-close{
+    float: right !important;
+}
+
+.modal-dialog{
+    border: solid 2px gray;
+    border-radius: 20px;
+    /*overflow: hidden;*/
+    transition: all ease-out 0.2s;
+}
+
+.btn-modal{
+    border: solid 2px rgb(36, 36, 36);
+    border-radius: 20px;
+    background-color: rgb(209, 204, 204);
+    overflow: hidden;
+    transition: all ease-out 0.2s;
+    width: 100px;
+}
+
+.fm{
+    align-items: center;
+}
+
+.fr{
+    float: right;
+}
+
+.fl{
+    float: left;
+}
+
+.btn{
+    background-color: rgb(248, 47, 47);
+}
+
