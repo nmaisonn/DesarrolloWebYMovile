@@ -1,6 +1,7 @@
 var contadorCartas = 0
-const cajita = document.getElementById("txt-area")
+const cajita = document.getElementById("txt-areaAgregar")
 const notas = document.getElementById("contenido-notas")
+let cantNotas = 4;
 
 function btnAgregar(){
     if (!cajita.value) {
@@ -15,6 +16,7 @@ function btnAgregar(){
     //Nota
     let divNota = document.createElement("div")
     divNota.classList.add("card","w-100", "card-border", "mb-5")
+    divNota.setAttribute("onclick","mostrarEditar(this)")
 
     //Cuerpo Nota
     let divCuerpoNota = document.createElement("div")
@@ -22,10 +24,13 @@ function btnAgregar(){
 
     //Contenido Nota
     let contenido = document.createElement("p")
+    contenido.setAttribute("id",contadorCartas);
+    contadorCartas++;
     contenido.classList.add("card-text","text-center")
     contenido.textContent = cajita.value
     let boton = document.createElement("button")
-    boton.classList.add("btn","btn-sm", "fr")
+    boton.classList.add("btn","btn-danger","btn-sm", "fr")
+    boton.setAttribute("onclick","mostrarBorrar(this)")
     let icono = document.createElement("i")
     icono.classList.add("fa-regular", "fa-trash-can")
 
@@ -41,17 +46,43 @@ function btnAgregar(){
     cajita.value=""
 
 }
-
-function cargarTexto(pTxtArea)
+let myModal=null;
+function mostrarEditar(pDivNota)
 {
+    let contenidoTxt = document.getElementById("txt-areaEditar");
+    let texto = pDivNota.children[0].children[0];
+    contenidoTxt.value = texto.textContent;
+    document.getElementById('staticBackdropEditar').setAttribute("data-edit",texto.getAttribute("id"));
+    myModal = new bootstrap.Modal(document.getElementById('staticBackdropEditar'))
+    myModal.show();
+}
+
+
+function btnEditar(PBoton){
+    let idEditado = document.getElementById("staticBackdropEditar").getAttribute("data-edit");
+    let texto = document.getElementById(idEditado);
+    let textoNuevo = PBoton.parentElement.parentElement.children[1].children[0].value;
     
+    texto.textContent = textoNuevo;
+    myModal.hide();
 }
 
-function btnEditar(pDiv){
-    const dCuerpoNota = pDiv.children[0]
 
+function mostrarBorrar(pDivNota)
+{
+    let contenidoTxt = document.getElementById("txt-areaEditar");
+    let texto = pDivNota.children[0].children[0];
+    contenidoTxt.value = texto.textContent;
+    document.getElementById('staticBackdropBorrar').setAttribute("data-edit",texto.getAttribute("id"));
+    myModal = new bootstrap.Modal(document.getElementById('staticBackdropBorrar'))
+    myModal.show();
 }
+
 
 function btnBorrar(){
+    let idEditado = document.getElementById("staticBackdropBorrar").getAttribute("data-edit");
+    let texto = document.getElementById(idEditado);
+    let carta = texto.parentElement.parentElement.parentElement.remove()
+    myModal.hide();
 
 }

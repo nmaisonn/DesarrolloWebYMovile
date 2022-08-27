@@ -78,8 +78,8 @@ Hover expansivo para las cartas.
 .fl{
     float: left;
 }
-
-.btn{
-    background-color: rgb(248, 47, 47);
+.modal-title, .modal-body{
+    margin:0 auto;
 }
+
 
