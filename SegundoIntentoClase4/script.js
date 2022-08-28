@@ -2,6 +2,7 @@ var contadorCartas = 0
 const cajita = document.getElementById("txt-areaAgregar")
 const notas = document.getElementById("contenido-notas")
 let cantNotas = 4;
+let myModal=null;
 
 function btnAgregar(){
     if (!cajita.value) {
@@ -16,7 +17,7 @@ function btnAgregar(){
     //Nota
     let divNota = document.createElement("div")
     divNota.classList.add("card","w-100", "card-border", "mb-5")
-    divNota.setAttribute("onclick","mostrarEditar(this)")
+   
 
     //Cuerpo Nota
     let divCuerpoNota = document.createElement("div")
@@ -27,6 +28,7 @@ function btnAgregar(){
     contenido.setAttribute("id",contadorCartas);
     contadorCartas++;
     contenido.classList.add("card-text","text-center")
+    contenido.setAttribute("onclick","mostrarEditar(this)")
     contenido.textContent = cajita.value
     let boton = document.createElement("button")
     boton.classList.add("btn","btn-danger","btn-sm", "fr")
@@ -41,18 +43,16 @@ function btnAgregar(){
     divCuerpoNota.appendChild(contenido)
     boton.appendChild(icono)
     divCuerpoNota.appendChild(boton)
-    
     //Vacio contenido Caja
     cajita.value=""
 
 }
-let myModal=null;
-function mostrarEditar(pDivNota)
+
+function mostrarEditar(pTexto)
 {
     let contenidoTxt = document.getElementById("txt-areaEditar");
-    let texto = pDivNota.children[0].children[0];
-    contenidoTxt.value = texto.textContent;
-    document.getElementById('staticBackdropEditar').setAttribute("data-edit",texto.getAttribute("id"));
+    contenidoTxt.value = pTexto.textContent;
+    document.getElementById('staticBackdropEditar').setAttribute("data-edit",pTexto.getAttribute("id"));
     myModal = new bootstrap.Modal(document.getElementById('staticBackdropEditar'))
     myModal.show();
 }
@@ -68,10 +68,10 @@ function btnEditar(PBoton){
 }
 
 
-function mostrarBorrar(pDivNota)
+function mostrarBorrar(pBoton)
 {
-    let contenidoTxt = document.getElementById("txt-areaEditar");
-    let texto = pDivNota.children[0].children[0];
+    let contenidoTxt = document.getElementById("txt-areaBorrar");
+    let texto = pBoton.parentElement.children[0];
     contenidoTxt.value = texto.textContent;
     document.getElementById('staticBackdropBorrar').setAttribute("data-edit",texto.getAttribute("id"));
     myModal = new bootstrap.Modal(document.getElementById('staticBackdropBorrar'))
