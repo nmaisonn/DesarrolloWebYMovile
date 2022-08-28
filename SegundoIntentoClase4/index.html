@@ -54,7 +54,7 @@
                 <div class="col-sm-12 col-md-4">
                     <div class="card w-100 card-border mb-5">
                         <div class="card-body">
-                            <p class="card-text" id="1" onclick="mostrarEditar(this)">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text" id="1" onclick="mostrarEditar(this)">id 1:Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <button class="btn btn-danger btn-sm fr" onclick="mostrarBorrar(this)"><i class="fa-regular fa-trash-can"></i></button>
                         </div>
                     </div>
@@ -62,7 +62,7 @@
                 <div class="col-sm-12 col-md-4">
                     <div class="card w-100 card-border mb-5">
                         <div class="card-body">
-                            <p class="card-text" id="2" onclick="mostrarEditar(this)">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text" id="2" onclick="mostrarEditar(this)">id 2:Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <button class="btn btn-danger btn-sm fr" onclick="mostrarBorrar(this)"><i class="fa-regular fa-trash-can"></i></button>
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                 <div class="col-sm-12 col-md-4">
                     <div class="card w-100 card-border mb-5" >
                         <div class="card-body">
-                            <p class="card-text" id="3" onclick="mostrarEditar(this)">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text" id="3" onclick="mostrarEditar(this)">id3: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <button class="btn btn-danger btn-sm fr" onclick="mostrarBorrar(this)"><i class="fa-regular fa-trash-can"></i></button>
                         </div>
                     </div>
@@ -78,16 +78,8 @@
             </div>    
         </div>
     </div>  
-    <!--BOTONAGREGAR-->
-    <div class="row justify-content-end">
-        <div class="col-md-1">
-            <button class="btn btn-success botonAgregar" data-bs-toggle="modal" data-bs-target="#staticBackdropAgregar">
-                Agregar
-            </button> 
-        </div>
-    </div>
-    <!-- ModalAgregar -->
-    <div class="modal fade" id="staticBackdropAgregar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelAgregar" aria-hidden="true">
+     <!-- ModalAgregar -->
+     <div class="modal fade" id="staticBackdropAgregar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelAgregar" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header fm">
@@ -127,7 +119,7 @@
         <div class="modal-dialog">
             <div class="modal-content fm">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Esta seguro que desea borrar la nota?</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">¿Esta seguro que desea borrar la nota?</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -142,6 +134,14 @@
 
     <!--FOOTER-->
     <div id="footer" class="fixed-bottom bg-light">
+        <!--BOTONAGREGAR-->
+        <div class="row justify-content-end">
+            <div class="col-md-1">
+                <button class="btn btn-success botonAgregar" data-bs-toggle="modal" data-bs-target="#staticBackdropAgregar">
+                    Agregar
+                </button> 
+            </div>
+        </div>
         <!--DARKMODE-->
         <div id="darkmode" >
             <div class="container">

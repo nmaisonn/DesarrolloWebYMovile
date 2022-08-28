@@ -1,4 +1,3 @@
-var contadorCartas = 0
 const cajita = document.getElementById("txt-areaAgregar")
 const notas = document.getElementById("contenido-notas")
 let cantNotas = 4;
@@ -18,15 +17,14 @@ function btnAgregar(){
     let divNota = document.createElement("div")
     divNota.classList.add("card","w-100", "card-border", "mb-5")
    
-
     //Cuerpo Nota
     let divCuerpoNota = document.createElement("div")
     divCuerpoNota.classList.add("card-body")
 
     //Contenido Nota
     let contenido = document.createElement("p")
-    contenido.setAttribute("id",contadorCartas);
-    contadorCartas++;
+    contenido.setAttribute("id",cantNotas);
+    cantNotas++;
     contenido.classList.add("card-text","text-center")
     contenido.setAttribute("onclick","mostrarEditar(this)")
     contenido.textContent = cajita.value
