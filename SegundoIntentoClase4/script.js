@@ -82,5 +82,4 @@ function btnBorrar(){
     let texto = document.getElementById(idEditado);
     let carta = texto.parentElement.parentElement.parentElement.remove()
     myModal.hide();
-
 }
